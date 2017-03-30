@@ -1,26 +1,105 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1212" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Game View Controller-->
         <scene sceneID="tXr-a1-R10">
             <objects>
-                <viewController id="BV1-FR-VrT" customClass="GameViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BV1-FR-VrT" customClass="GameViewController" customModule="SimpleSceneKitExample" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Cei-gA-s71"/>
-                        <viewControllerLayoutGuide type="bottom" id="O1X-57-Ctf"/>
+                        <viewControllerLayoutGuide type="top" id="wdx-Hf-RW9"/>
+                        <viewControllerLayoutGuide type="bottom" id="JQr-Ic-vL3"/>
                     </layoutGuides>
-                    <sceneKitView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="3se-qz-xqx">
+                    <view key="view" contentMode="scaleToFill" id="UN7-fZ-jfh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </sceneKitView>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="Kua-p8-2X0">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9N3-pm-crQ">
+                                <rect key="frame" x="0.0" y="80" width="375" height="587"/>
+                            </sceneKitView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o8s-xb-Pks">
+                                <rect key="frame" x="26" y="47.5" width="54" height="24.5"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ct0-fl-UdX">
+                                <rect key="frame" x="83" y="47.5" width="90" height="24.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="DKS-qM-tA3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q9p-7h-Z1t">
+                                <rect key="frame" x="226" y="47.5" width="20" height="24.5"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Life: " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aVL-fB-kKf">
+                                <rect key="frame" x="181" y="47.5" width="40" height="24.5"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jkj-iC-UO3">
+                                <rect key="frame" x="316" y="45" width="30" height="30"/>
+                                <color key="backgroundColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="XYN-Wo-ejo"/>
+                                    <constraint firstAttribute="height" constant="30" id="fpz-Dw-6qo"/>
+                                </constraints>
+                                <state key="normal" title=" " image="pause_button"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="JQr-Ic-vL3" firstAttribute="top" secondItem="Kua-p8-2X0" secondAttribute="bottom" id="0C5-8p-hDr"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Jkj-iC-UO3" secondAttribute="trailing" constant="13" id="15U-lW-w6a"/>
+                            <constraint firstItem="Ct0-fl-UdX" firstAttribute="leading" secondItem="o8s-xb-Pks" secondAttribute="trailing" constant="2.5" id="1Qa-bo-0H9"/>
+                            <constraint firstItem="9N3-pm-crQ" firstAttribute="top" secondItem="q9p-7h-Z1t" secondAttribute="bottom" constant="8" id="1pG-PK-P6s"/>
+                            <constraint firstItem="Kua-p8-2X0" firstAttribute="top" secondItem="UN7-fZ-jfh" secondAttribute="top" id="224-7L-iR0"/>
+                            <constraint firstItem="Kua-p8-2X0" firstAttribute="leading" secondItem="UN7-fZ-jfh" secondAttribute="leading" id="2Rr-g4-f9d"/>
+                            <constraint firstItem="aVL-fB-kKf" firstAttribute="leading" secondItem="Ct0-fl-UdX" secondAttribute="trailing" constant="8" id="70N-C6-amw"/>
+                            <constraint firstItem="9N3-pm-crQ" firstAttribute="top" secondItem="o8s-xb-Pks" secondAttribute="bottom" constant="8" id="7NY-Yx-3XT"/>
+                            <constraint firstItem="9N3-pm-crQ" firstAttribute="leading" secondItem="UN7-fZ-jfh" secondAttribute="leading" id="HY4-dk-cMx"/>
+                            <constraint firstAttribute="trailing" secondItem="Kua-p8-2X0" secondAttribute="trailing" id="I8n-Kp-rPz"/>
+                            <constraint firstItem="9N3-pm-crQ" firstAttribute="top" secondItem="Ct0-fl-UdX" secondAttribute="bottom" constant="8" id="Orx-mh-QBo"/>
+                            <constraint firstItem="9N3-pm-crQ" firstAttribute="top" secondItem="Jkj-iC-UO3" secondAttribute="bottom" constant="5" id="SYj-qj-eai"/>
+                            <constraint firstItem="9N3-pm-crQ" firstAttribute="top" secondItem="aVL-fB-kKf" secondAttribute="bottom" constant="8" id="g0z-nZ-9mY"/>
+                            <constraint firstItem="o8s-xb-Pks" firstAttribute="leading" secondItem="UN7-fZ-jfh" secondAttribute="leadingMargin" constant="10" id="ght-J4-CBv"/>
+                            <constraint firstItem="q9p-7h-Z1t" firstAttribute="leading" secondItem="aVL-fB-kKf" secondAttribute="trailing" constant="5" id="j5V-lu-0HT"/>
+                            <constraint firstAttribute="trailing" secondItem="9N3-pm-crQ" secondAttribute="trailing" id="oth-bg-adQ"/>
+                            <constraint firstItem="9N3-pm-crQ" firstAttribute="top" secondItem="wdx-Hf-RW9" secondAttribute="bottom" constant="60" id="r7W-Rl-cV4"/>
+                            <constraint firstItem="JQr-Ic-vL3" firstAttribute="top" secondItem="9N3-pm-crQ" secondAttribute="bottom" id="tRG-Ru-gTW"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="gameView" destination="9N3-pm-crQ" id="Jco-iM-EiM"/>
+                        <outlet property="life" destination="q9p-7h-Z1t" id="qJB-S9-Mrl"/>
+                        <outlet property="scoreLbl" destination="Ct0-fl-UdX" id="zUh-PF-xnu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="37.331334332833585"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bg" width="640" height="320"/>
+        <image name="pause_button" width="128" height="128"/>
+    </resources>
 </document>
